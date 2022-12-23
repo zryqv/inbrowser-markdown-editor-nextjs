@@ -13,14 +13,14 @@ const SignIn = () => {
         <Button
           type="submit"
           className="mt-4 w-[295px]"
-          onClick={() => signIn()}
+          onClick={() => signIn("discord")}
         >
           Sign in with discord
         </Button>
         <Button
           type="submit"
           className="mt-4 w-[295px] transition "
-          onClick={() => signIn()}
+          onClick={() => signIn("github")}
         >
           Sign in with Github
         </Button>

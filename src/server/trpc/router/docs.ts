@@ -26,7 +26,7 @@ export const docsRouter = router({
         },
         update: { title: input.newTitle, content: input.content },
         create: {
-          title: input.title,
+          title: input.newTitle || input.title,
           content: input.content,
           belongsToId: ctx.session.user.id,
         },

@@ -61,7 +61,11 @@ const Home: NextPage = () => {
       </div>
     );
   }
-  if (session.status === "authenticated" && initDocs.isSuccess)
+  if (
+    session.status === "authenticated" &&
+    initDocs.isSuccess &&
+    initDocs.data.length > 0
+  )
     feed.data = initDocs.data;
   return (
     <>

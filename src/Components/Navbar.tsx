@@ -142,35 +142,6 @@ function Navbar({
         </button>
         <Button
           onClick={
-            //   if (newTitle) {
-            //     setFiles(
-            //       files.map((oldFile) => {
-            //         if (oldFile.title === file.title) {
-            //           setFile({
-            //             title: newTitle,
-            //             updatedAt: `${new Date()}`,
-            //             content,
-            //           });
-            //           return {
-            //             title: newTitle,
-            //             updatedAt: `${new Date()}`,
-            //             content,
-            //           };
-            //         }
-            //         return oldFile;
-            //       })
-            //     );
-            //   } else {
-            //     setFiles(
-            //       files.map((oldFile) => {
-            //         if (oldFile.title === file.title)
-            //           return { ...file, content };
-            //         return oldFile;
-            //       })
-            //     );
-            //   }
-            //   //
-            // }
             sessionData
               ? async () => {
                   mutation.mutate({
@@ -184,6 +155,7 @@ function Navbar({
                       docs.map((oldDoc) => {
                         if (oldDoc.title === doc.title)
                           return {
+                            notinDb: false,
                             title: newTitle,
                             content: doc.content,
                             updatedAt: new Date(),
@@ -196,6 +168,7 @@ function Navbar({
                       docs.map((oldDoc) => {
                         if (oldDoc.title === doc.title)
                           return {
+                            notinDb: false,
                             title: doc.title,
                             content: doc.content,
                             updatedAt: new Date(),
@@ -204,6 +177,12 @@ function Navbar({
                       })
                     );
                   }
+                  setDoc({
+                    notinDb: false,
+                    title: doc.title,
+                    content: doc.content,
+                    updatedAt: new Date(),
+                  });
                 }
               : () => setShowLoginModal(true)
           }
