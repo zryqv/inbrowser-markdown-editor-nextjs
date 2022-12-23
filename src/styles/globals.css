@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    h1 {
+      @apply text-h1 font-serif dark:text-100 my-5 text-700 px-6; 
+    }
+    h2 {
+        @apply text-h2 font-serif dark:text-100 my-5 text-700 px-6; 
+      }
+      h3 {
+        @apply text-h3 font-serif dark:text-100 my-5 text-700 px-6; 
+      }
+      h4 {
+        @apply text-h4 font-serif dark:text-100 my-5 text-700 px-6; 
+      }
+      h5 {
+        @apply text-h5 font-serif dark:text-100 my-5 text-700 px-6; 
+      }
+      h6 {
+        @apply text-h6 font-serif  my-5 text-orange  px-6; 
+      }
+    p {
+        @apply text-pp text-500 font-serif px-6 dark:text-400 my-5;
+    }
+    ol {
+        @apply px-16 list-decimal text-pp font-serif text-500 dark:text-400;
+    }
+    ul {
+        @apply px-16  text-pp font-serif text-500 dark:text-400;
+    }
+    blockquote {
+        @apply p-6 m-6 dark:bg-800  bg-200 rounded-[4px] border-l-2 border-orange;
+    }
+    blockquote p {
+        @apply text-700 m-0 dark:text-100 font-serif text-ppb;
+    }
+    code {
+        @apply font-mono text-markdown text-700 dark:text-100 ;
+    }
+    pre{
+        @apply bg-200 rounded-[4px] p-6 m-6 dark:bg-800;
+    }
+  }
+
+  ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #E46643; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
